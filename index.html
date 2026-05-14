@@ -3,22 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saima Sanjida Shila | Portfolio</title>
+  <title>Saima Sanjida Shila</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
     :root {
-      --bg: #050816;
-      --card: rgba(255,255,255,.08);
-      --border: rgba(255,255,255,.14);
+      --bg: #020617;
+      --card: rgba(15, 23, 42, 0.78);
+      --card2: rgba(30, 41, 59, 0.72);
+      --border: rgba(148, 163, 184, 0.28);
       --text: #f8fafc;
-      --muted: #c7d5e8;
+      --muted: #cbd5e1;
       --blue: #38bdf8;
       --cyan: #7dd3fc;
     }
@@ -34,26 +30,24 @@
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -2;
+      z-index: -3;
       background:
-        linear-gradient(rgba(2,8,23,.83), rgba(2,8,23,.9)),
-        url("background.jpg") center/cover no-repeat;
+        linear-gradient(rgba(2,6,23,.78), rgba(2,6,23,.9)),
+        url("assets/background.png") center center / cover no-repeat;
     }
 
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -1;
+      z-index: -2;
       background:
-        radial-gradient(circle at 15% 20%, rgba(56,189,248,.22), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(125,211,252,.12), transparent 30%);
+        radial-gradient(circle at 15% 18%, rgba(56,189,248,.22), transparent 30%),
+        radial-gradient(circle at 85% 12%, rgba(125,211,252,.13), transparent 32%),
+        linear-gradient(135deg, rgba(3,7,18,.55), rgba(15,23,42,.35));
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     header {
       position: fixed;
@@ -68,20 +62,13 @@
       align-items: center;
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: rgba(5,8,22,.75);
+      background: rgba(2,6,23,.78);
       backdrop-filter: blur(18px);
       box-shadow: 0 20px 60px rgba(0,0,0,.35);
     }
 
-    .logo {
-      font-weight: 800;
-      letter-spacing: .3px;
-      font-size: 18px;
-    }
-
-    .logo span {
-      color: var(--blue);
-    }
+    .logo { font-weight: 900; font-size: 18px; white-space: nowrap; }
+    .logo span { color: var(--blue); }
 
     nav {
       display: flex;
@@ -90,14 +77,9 @@
       color: var(--muted);
     }
 
-    nav a:hover {
-      color: white;
-    }
+    nav a:hover { color: white; }
 
-    .social {
-      display: flex;
-      gap: 10px;
-    }
+    .social { display: flex; gap: 10px; }
 
     .social a {
       width: 38px;
@@ -125,17 +107,17 @@
     section {
       width: min(1120px, calc(100% - 32px));
       margin: auto;
-      padding: 85px 0;
+      padding: 82px 0;
     }
 
     .hero {
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
+      display: flex;
       align-items: center;
-      gap: 45px;
-      padding-top: 130px;
+      padding-top: 135px;
     }
+
+    .hero-inner { max-width: 880px; }
 
     .eyebrow {
       display: inline-flex;
@@ -143,43 +125,40 @@
       margin-bottom: 22px;
       border-radius: 999px;
       color: var(--cyan);
-      background: rgba(125,211,252,.1);
-      border: 1px solid rgba(125,211,252,.25);
+      background: rgba(125,211,252,.12);
+      border: 1px solid rgba(125,211,252,.28);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
     .hero h1 {
-      font-size: clamp(44px, 7vw, 80px);
-      line-height: .98;
-      letter-spacing: -3px;
+      font-size: clamp(48px, 7vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -2.4px;
       margin-bottom: 24px;
+      max-width: 980px;
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, #fff, var(--cyan), var(--blue));
+      background: linear-gradient(90deg, #fff, #bae6fd, var(--blue));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 760px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.75;
       margin-bottom: 30px;
     }
 
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
+    .actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
     .btn {
       padding: 13px 20px;
       border-radius: 14px;
-      font-weight: 800;
+      font-weight: 850;
       border: 1px solid var(--border);
       transition: .25s;
     }
@@ -190,52 +169,14 @@
       border: none;
     }
 
-    .btn.secondary {
-      background: rgba(255,255,255,.08);
-    }
+    .btn.secondary { background: rgba(255,255,255,.08); }
 
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 18px 35px rgba(56,189,248,.22);
     }
 
-    .hero-card,
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 22px 55px rgba(0,0,0,.25);
-    }
-
-    .hero-card {
-      padding: 26px;
-      border-radius: 30px;
-    }
-
-    .stat {
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.07);
-      border: 1px solid var(--border);
-      margin-bottom: 14px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 27px;
-      color: white;
-      margin-bottom: 4px;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    .section-head {
-      margin-bottom: 28px;
-    }
+    .section-head { margin-bottom: 28px; }
 
     .section-head h2 {
       font-size: 40px;
@@ -245,77 +186,72 @@
 
     .section-head p {
       color: var(--muted);
-      max-width: 720px;
+      max-width: 760px;
       line-height: 1.65;
     }
 
-    .grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .three {
-      grid-template-columns: repeat(3, 1fr);
-    }
+    .grid { display: grid; gap: 18px; }
+    .two { grid-template-columns: repeat(2, 1fr); }
+    .three { grid-template-columns: repeat(3, 1fr); }
 
     .card {
       padding: 22px;
       border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 22px 55px rgba(0,0,0,.22);
       transition: .25s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      background: rgba(255,255,255,.12);
+      background: rgba(30,41,59,.82);
       box-shadow: 0 24px 60px rgba(0,0,0,.28);
     }
 
+    .card h3 { font-size: 20px; margin-bottom: 8px; color: white; }
+    .card p, .card li { color: var(--muted); line-height: 1.6; font-size: 15px; }
+
     .edu-card {
+      min-height: 142px;
       display: flex;
       gap: 18px;
       align-items: center;
     }
 
-    .edu-card img {
-      width: 76px;
-      height: 76px;
+    .edu-card img, .work-logo {
+      width: 78px;
+      height: 78px;
       object-fit: contain;
       padding: 10px;
       border-radius: 18px;
       background: white;
+      flex-shrink: 0;
     }
 
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      color: white;
+    .edu-meta {
+      margin-top: 8px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .card p,
-    .card li {
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 15px;
+    .pill {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(125,211,252,.11);
+      border: 1px solid rgba(125,211,252,.25);
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
     }
 
     .experience-card {
-      position: relative;
-      padding-left: 28px;
-    }
-
-    .experience-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 24px;
-      bottom: 24px;
-      width: 3px;
-      border-radius: 999px;
-      background: linear-gradient(var(--cyan), var(--blue));
+      min-height: 260px;
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 20px;
     }
 
     .role-top {
@@ -326,26 +262,17 @@
       margin-bottom: 10px;
     }
 
-    .company,
-    .date {
+    .company, .date {
       color: var(--cyan);
-      font-weight: 800;
+      font-weight: 850;
       font-size: 14px;
     }
 
-    .experience-card ul {
-      margin-top: 12px;
-      padding-left: 18px;
-    }
+    .experience-card ul { margin-top: 12px; padding-left: 18px; }
+    .experience-card li { margin-bottom: 7px; }
 
-    .experience-card li {
-      margin-bottom: 7px;
-    }
-
-    /* COMPACT PROJECT CARDS */
     .project {
-      min-height: 0;
-      padding: 20px;
+      height: 245px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -359,53 +286,61 @@
       color: var(--cyan);
       border: 1px solid rgba(125,211,252,.25);
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 850;
       margin-bottom: 14px;
     }
 
-    .project h3 {
-      font-size: 19px;
-      line-height: 1.25;
-      margin-bottom: 9px;
-    }
+    .project h3 { font-size: 18px; line-height: 1.25; margin-bottom: 9px; }
+    .project p { font-size: 14px; line-height: 1.55; }
+    .open { margin-top: 14px; color: var(--cyan); font-weight: 850; font-size: 13px; }
 
-    .project p {
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .project .open {
-      margin-top: 16px;
-      color: var(--cyan);
-      font-weight: 800;
-      font-size: 13px;
+    .skill-card {
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
+      gap: 10px;
+      margin-top: 8px;
     }
 
-    .skills span {
+    .skill-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 9px 12px;
       border-radius: 999px;
       background: rgba(255,255,255,.08);
       border: 1px solid var(--border);
       color: #dbeafe;
       font-size: 13px;
+      font-weight: 700;
+    }
+
+    .skill-icon {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(125,211,252,.14);
+      color: var(--cyan);
+      font-size: 12px;
+      font-weight: 900;
     }
 
     .award {
+      min-height: 88px;
       display: grid;
-      grid-template-columns: 150px 1fr;
+      grid-template-columns: 160px 1fr;
       gap: 20px;
+      align-items: center;
     }
 
-    .award-year {
-      color: var(--cyan);
-      font-weight: 900;
-    }
+    .award-year { color: var(--cyan); font-weight: 900; }
 
     footer {
       width: min(1120px, calc(100% - 32px));
@@ -437,35 +372,17 @@
         gap: 14px;
       }
 
-      nav {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 70px;
-      }
-
-      .two,
-      .three {
-        grid-template-columns: 1fr;
-      }
-
-      .award {
-        grid-template-columns: 1fr;
-      }
+      nav { flex-wrap: wrap; justify-content: center; }
+      .hero { min-height: auto; padding-top: 70px; }
+      .two, .three { grid-template-columns: 1fr; }
+      .project { height: auto; min-height: 210px; }
+      .award { grid-template-columns: 1fr; }
+      .experience-card { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 520px) {
-      .hero h1 {
-        letter-spacing: -1.5px;
-      }
-
-      .edu-card {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .hero h1 { letter-spacing: -1.2px; }
+      .edu-card { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -500,8 +417,9 @@
   </header>
 
   <main>
+
     <section id="about" class="hero reveal">
-      <div>
+      <div class="hero-inner">
         <div class="eyebrow">Software Engineer • Data Analyst • AI Policy</div>
         <h1>Hi, I’m <span class="gradient-text">Saima Sanjida Shila</span></h1>
         <p>
@@ -513,21 +431,6 @@
         <div class="actions">
           <a class="btn primary" href="#projects">Explore Projects</a>
           <a class="btn secondary" href="mailto:saimasanjidashila@gmail.com">Contact Me</a>
-        </div>
-      </div>
-
-      <div class="hero-card">
-        <div class="stat">
-          <strong>Policy + AI</strong>
-          <span>Insurance AI, market analysis, NAIC collaboration, and responsible innovation</span>
-        </div>
-        <div class="stat">
-          <strong>ML + Data</strong>
-          <span>Forecasting, visualization, model development, and analytics</span>
-        </div>
-        <div class="stat">
-          <strong>Full Stack</strong>
-          <span>React, Flask, Django, SQL, cloud, APIs, and deployment</span>
         </div>
       </div>
     </section>
@@ -544,6 +447,10 @@
           <div>
             <h3>Louisiana State University</h3>
             <p>Master of Science in Computer Science</p>
+            <div class="edu-meta">
+              <span class="pill">Graduated: 2025</span>
+              <span class="pill">CGPA: 4.00 / 4.00</span>
+            </div>
           </div>
         </div>
 
@@ -552,6 +459,10 @@
           <div>
             <h3>Brac University</h3>
             <p>Bachelor of Science in Computer Science and Engineering</p>
+            <div class="edu-meta">
+              <span class="pill">Graduated: 2022</span>
+              <span class="pill">CGPA: 3.55 / 4.00</span>
+            </div>
           </div>
         </div>
       </div>
@@ -565,50 +476,64 @@
 
       <div class="grid">
         <div class="card experience-card">
-          <div class="role-top">
-            <div>
-              <div class="company">State of Louisiana — Department of Insurance</div>
-              <h3>Policy Advisor / Data Analyst</h3>
+          <img class="work-logo" src="assets/ldi-logo.png" alt="Louisiana Department of Insurance Logo" />
+          <div>
+            <div class="role-top">
+              <div>
+                <div class="company">State of Louisiana — Department of Insurance</div>
+                <h3>Policy Advisor / Data Analyst</h3>
+              </div>
+              <div class="date">Oct 2025 – Current</div>
             </div>
-            <div class="date">Newest Role</div>
+            <ul>
+              <li>Analyze insurance data to generate actionable insights that support policy, innovation, and research initiatives.</li>
+              <li>Serve as AI lead for the Office of Policy, Innovation & Research team on responsible AI and insurance analytics initiatives.</li>
+              <li>Participate as a member of the NAIC Big Data and Artificial Intelligence Working Group, contributing to insurance AI-related discussions with NAIC and other states.</li>
+              <li>Collaborate with insurers and internal divisions to support a more profitable, sustainable, and policyholder-focused insurance market.</li>
+              <li>Lead and coordinate cross-functional projects involving insurance data, AI, innovation, market research, and policy analysis.</li>
+              <li>Joined conferences and professional discussions on artificial intelligence, catastrophe modeling, and insurance innovation to strengthen technical knowledge and support data-driven regulatory decision-making.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Analyze insurance market data to generate insights that support policy, innovation, and research initiatives.</li>
-            <li>Serve as AI lead for the Office of Policy, Innovation & Research team.</li>
-            <li>Participate in the NAIC Big Data and Artificial Intelligence Working Group on insurance AI-related matters.</li>
-            <li>Collaborate with insurers and internal divisions to support a more sustainable and policyholder-focused insurance market.</li>
-            <li>Lead and coordinate data, innovation, and insurance policy projects across stakeholders.</li>
-          </ul>
         </div>
 
         <div class="card experience-card">
-          <div class="role-top">
-            <div>
-              <div class="company">Louisiana State University</div>
-              <h3>Graduate Assistant</h3>
+          <img class="work-logo" src="assets/lsu.png" alt="Louisiana State University Logo" />
+          <div>
+            <div class="role-top">
+              <div>
+                <div class="company">Louisiana State University</div>
+                <h3>Graduate Assistant</h3>
+              </div>
+              <div class="date">Jan 2024 – Dec 2025</div>
             </div>
-            <div class="date">Jan 2024 – Current</div>
+            <ul>
+              <li>Designed and implemented data pipelines to process over 1TB+ of satellite imagery using Python, Pandas, and NumPy on Linux servers.</li>
+              <li>Created 2D animations in Blender to visualize sea surface temperature patterns.</li>
+              <li>Maintained data integrity, documentation, and reproducibility of research results.</li>
+              <li>Managed 3+ lab servers and ongoing imagery processing workflows using Cron jobs.</li>
+              <li>Worked on an NSF-funded project using machine learning models to investigate atmospheric dust.</li>
+              <li>Developed real-time data visualizations using Seaborn and Matplotlib to highlight environmental and atmospheric changes.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Designed and implemented data pipelines to process 1TB+ of satellite imagery using Python, Pandas, and NumPy.</li>
-            <li>Developed visualizations and animations to communicate sea surface temperature and environmental patterns.</li>
-            <li>Managed lab servers, cron jobs, documentation, and reproducible research workflows for NSF-funded environmental research.</li>
-          </ul>
         </div>
 
         <div class="card experience-card">
-          <div class="role-top">
-            <div>
-              <div class="company">Star IT Limited</div>
-              <h3>Web Developer Intern</h3>
+          <img class="work-logo" src="assets/starit-logo.png" alt="Star IT Limited Logo" />
+          <div>
+            <div class="role-top">
+              <div>
+                <div class="company">Star IT Limited</div>
+                <h3>Web Developer Intern</h3>
+              </div>
+              <div class="date">Feb 2022 – Aug 2022</div>
             </div>
-            <div class="date">Feb 2022 – Aug 2022</div>
+            <ul>
+              <li>Built and deployed 3+ e-commerce websites using ReactJS and ensured a user-friendly experience.</li>
+              <li>Collaborated with Agile teams to deploy high-quality features and enhance product usability.</li>
+              <li>Managed version control using Git and automated data pipelines, reducing deployment errors and enhancing release reliability.</li>
+              <li>Developed and deployed real-world data-driven applications using React API, .NET, and JavaScript for 20+ customers.</li>
+            </ul>
           </div>
-          <ul>
-            <li>Built and deployed e-commerce websites using ReactJS, JavaScript, APIs, and modern frontend practices.</li>
-            <li>Collaborated with Agile teams to improve usability, release quality, and customer-facing product features.</li>
-            <li>Used Git version control and deployment workflows to support reliable application delivery.</li>
-          </ul>
         </div>
       </div>
     </section>
@@ -649,11 +574,6 @@
           <div><div class="year">2024</div><h3>E-commerce Seller Rating</h3><p>Apache Spark system for customer transactions and seller reliability analysis.</p></div>
           <div class="open">View Repository →</div>
         </a>
-
-        <a class="card project" href="https://github.com/saimasanjidashila/Visualization-of-Saharan-Dust-on-Forecasting-Sea-Surface-Temperature-using-Deep-Learning" target="_blank">
-          <div><div class="year">2024</div><h3>Saharan Dust & SST Forecasting</h3><p>CNN-LSTM framework for dust impact visualization and SST forecasting.</p></div>
-          <div class="open">View Repository →</div>
-        </a>
       </div>
     </section>
 
@@ -663,29 +583,89 @@
         <p>A practical mix of software development, machine learning, analytics, cloud, databases, and visualization tools.</p>
       </div>
 
-      <div class="grid two">
-        <div class="card"><h3>Machine Learning & AI</h3><div class="skills"><span>Scikit-learn</span><span>TensorFlow</span><span>PyTorch</span><span>Fine Tuning</span><span>Feature Selection</span><span>Time-Series Forecasting</span></div></div>
-        <div class="card"><h3>Software Development</h3><div class="skills"><span>ReactJS</span><span>NodeJS</span><span>.NET</span><span>Flask</span><span>Django</span><span>WordPress</span></div></div>
-        <div class="card"><h3>Data & Visualization</h3><div class="skills"><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Plotly</span><span>Power BI</span><span>Tableau</span></div></div>
-        <div class="card"><h3>Database, Cloud & Tools</h3><div class="skills"><span>SQL</span><span>PostgreSQL</span><span>AWS</span><span>Apache Spark</span><span>Hadoop</span><span>GitHub</span></div></div>
-        <div class="card"><h3>Programming Languages</h3><div class="skills"><span>Python</span><span>Java</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>TypeScript</span></div></div>
-        <div class="card"><h3>Policy & Insurance Analytics</h3><div class="skills"><span>Insurance Data</span><span>AI Policy</span><span>Market Analysis</span><span>NAIC Collaboration</span><span>Stakeholder Coordination</span></div></div>
+      <div class="grid three">
+        <div class="card skill-card">
+          <h3>Machine Learning & AI</h3>
+          <div class="skills">
+            <span class="skill-chip"><span class="skill-icon">SK</span>Scikit-learn</span>
+            <span class="skill-chip"><span class="skill-icon">TF</span>TensorFlow</span>
+            <span class="skill-chip"><span class="skill-icon">PT</span>PyTorch</span>
+            <span class="skill-chip"><span class="skill-icon">AI</span>Fine Tuning</span>
+            <span class="skill-chip"><span class="skill-icon">ML</span>Feature Selection</span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Software Development</h3>
+          <div class="skills">
+            <span class="skill-chip"><span class="skill-icon">⚛</span>ReactJS</span>
+            <span class="skill-chip"><span class="skill-icon">JS</span>NodeJS</span>
+            <span class="skill-chip"><span class="skill-icon">.N</span>.NET</span>
+            <span class="skill-chip"><span class="skill-icon">Fl</span>Flask</span>
+            <span class="skill-chip"><span class="skill-icon">Dj</span>Django</span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Data & Visualization</h3>
+          <div class="skills">
+            <span class="skill-chip"><span class="skill-icon">🐼</span>Pandas</span>
+            <span class="skill-chip"><span class="skill-icon">NP</span>NumPy</span>
+            <span class="skill-chip"><span class="skill-icon">📊</span>Matplotlib</span>
+            <span class="skill-chip"><span class="skill-icon">Pl</span>Plotly</span>
+            <span class="skill-chip"><span class="skill-icon">BI</span>Power BI</span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Database, Cloud & Tools</h3>
+          <div class="skills">
+            <span class="skill-chip"><span class="skill-icon">SQL</span>SQL</span>
+            <span class="skill-chip"><span class="skill-icon">PG</span>PostgreSQL</span>
+            <span class="skill-chip"><span class="skill-icon">AWS</span>AWS</span>
+            <span class="skill-chip"><span class="skill-icon">SP</span>Apache Spark</span>
+            <span class="skill-chip"><span class="skill-icon">GH</span>GitHub</span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Programming Languages</h3>
+          <div class="skills">
+            <span class="skill-chip"><span class="skill-icon">Py</span>Python</span>
+            <span class="skill-chip"><span class="skill-icon">☕</span>Java</span>
+            <span class="skill-chip"><span class="skill-icon">H5</span>HTML</span>
+            <span class="skill-chip"><span class="skill-icon">CSS</span>CSS</span>
+            <span class="skill-chip"><span class="skill-icon">JS</span>JavaScript</span>
+          </div>
+        </div>
+
+        <div class="card skill-card">
+          <h3>Policy & Insurance Analytics</h3>
+          <div class="skills">
+            <span class="skill-chip"><span class="skill-icon">IN</span>Insurance Data</span>
+            <span class="skill-chip"><span class="skill-icon">AI</span>AI Policy</span>
+            <span class="skill-chip"><span class="skill-icon">MR</span>Market Analysis</span>
+            <span class="skill-chip"><span class="skill-icon">NA</span>NAIC Collaboration</span>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="awards" class="reveal">
       <div class="section-head">
         <h2>Awards & Achievements</h2>
-        <p>Academic recognitions and research support received during undergraduate and graduate studies.</p>
+        <p>Academic recognitions, professional membership, and research support received during undergraduate and graduate studies.</p>
       </div>
 
       <div class="grid">
+        <div class="card award"><div class="award-year">2025–Present</div><p>Member of the <strong>NAIC Big Data and Artificial Intelligence Working Group</strong>.</p></div>
         <div class="card award"><div class="award-year">2025–2026</div><p>Member of <strong>The Honor Society of Phi Kappa Phi</strong> for Academic Excellence.</p></div>
         <div class="card award"><div class="award-year">2024–2025</div><p>Master’s thesis <strong>funded by NSF grant</strong>.</p></div>
         <div class="card award"><div class="award-year">2024–2025</div><p><strong>Graduate Assistantship Award</strong> by LSU.</p></div>
         <div class="card award"><div class="award-year">2022</div><p>Dean’s List and Vice Chancellor’s Award for Academic Excellence at Brac University.</p></div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -694,13 +674,11 @@
 
   <script>
     const reveals = document.querySelectorAll(".reveal");
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("active");
       });
     }, { threshold: 0.12 });
-
     reveals.forEach(el => observer.observe(el));
   </script>
 
