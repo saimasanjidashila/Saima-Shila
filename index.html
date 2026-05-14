@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saima Sanjida Shila</title>
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
   <style>
     * {
       margin: 0;
@@ -17,9 +19,8 @@
       --blue: #0ea5e9;
       --deep-blue: #075985;
       --orange: #f97316;
-      --light-orange: #fed7aa;
       --bg: #f8fbff;
-      --card: rgba(255, 255, 255, 0.78);
+      --card: rgba(255, 255, 255, 0.80);
       --text: #0f172a;
       --muted: #475569;
       --border: rgba(14, 165, 233, 0.22);
@@ -39,7 +40,7 @@
       inset: 0;
       z-index: -3;
       background:
-        linear-gradient(rgba(248, 251, 255, 0.58), rgba(248, 251, 255, 0.82)),
+        linear-gradient(rgba(248, 251, 255, 0.45), rgba(248, 251, 255, 0.75)),
         url("assets/background.png") center center / cover no-repeat;
     }
 
@@ -49,9 +50,9 @@
       inset: 0;
       z-index: -2;
       background:
-        radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.20), transparent 34%),
-        radial-gradient(circle at 86% 18%, rgba(249, 115, 22, 0.18), transparent 32%),
-        linear-gradient(135deg, rgba(255,255,255,0.72), rgba(239,246,255,0.62));
+        radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.18), transparent 34%),
+        radial-gradient(circle at 86% 18%, rgba(249, 115, 22, 0.17), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,0.55), rgba(239,246,255,0.45));
     }
 
     a {
@@ -72,7 +73,7 @@
       align-items: center;
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: rgba(255,255,255,0.78);
+      background: rgba(255,255,255,0.82);
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
     }
@@ -137,13 +138,15 @@
 
     .hero {
       min-height: 100vh;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
       align-items: center;
+      gap: 46px;
       padding-top: 130px;
     }
 
     .hero-inner {
-      max-width: 860px;
+      max-width: 760px;
     }
 
     .eyebrow {
@@ -159,11 +162,11 @@
     }
 
     .hero h1 {
-      font-size: clamp(42px, 5.6vw, 66px);
-      line-height: 1.08;
-      letter-spacing: -1.8px;
+      font-size: clamp(42px, 5vw, 62px);
+      line-height: 1.1;
+      letter-spacing: -1.5px;
       margin-bottom: 24px;
-      max-width: 900px;
+      max-width: 850px;
     }
 
     .gradient-text {
@@ -173,7 +176,7 @@
     }
 
     .hero p {
-      max-width: 760px;
+      max-width: 720px;
       color: var(--muted);
       font-size: 18px;
       line-height: 1.75;
@@ -202,13 +205,53 @@
     }
 
     .btn.secondary {
-      background: rgba(255,255,255,.76);
+      background: rgba(255,255,255,.82);
       color: var(--deep-blue);
     }
 
     .btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 18px 35px rgba(249,115,22,.18);
+    }
+
+    .hero-visual {
+      padding: 24px;
+      border-radius: 28px;
+      background: rgba(255,255,255,.68);
+      border: 1px solid rgba(14,165,233,.22);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .visual-title {
+      color: var(--deep-blue);
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .visual-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .visual-item {
+      padding: 16px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(249,115,22,.10));
+      border: 1px solid rgba(14,165,233,.18);
+    }
+
+    .visual-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .visual-item span {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
     }
 
     .section-head {
@@ -253,7 +296,7 @@
 
     .card:hover {
       transform: translateY(-5px);
-      background: rgba(255,255,255,.9);
+      background: rgba(255,255,255,.92);
       box-shadow: 0 24px 60px rgba(249,115,22,.14);
     }
 
@@ -375,7 +418,7 @@
     }
 
     .skill-card {
-      min-height: 190px;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
     }
@@ -383,33 +426,39 @@
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 8px;
+      gap: 12px;
+      margin-top: 12px;
+      align-content: flex-start;
     }
 
     .skill-chip {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,.82);
-      border: 1px solid rgba(14,165,233,.18);
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(14,165,233,.20);
       color: var(--text);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 750;
+      box-shadow: 0 8px 18px rgba(14,165,233,.08);
+      transition: .22s;
     }
 
-    .skill-icon {
+    .skill-chip:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 28px rgba(249,115,22,.16);
+    }
+
+    .skill-chip i {
+      font-size: 22px;
+    }
+
+    .skill-chip img {
       width: 22px;
       height: 22px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: linear-gradient(135deg, rgba(14,165,233,.16), rgba(249,115,22,.16));
-      color: var(--deep-blue);
-      font-size: 11px;
-      font-weight: 900;
+      object-fit: contain;
     }
 
     .award {
@@ -461,6 +510,7 @@
       }
 
       .hero {
+        grid-template-columns: 1fr;
         min-height: auto;
         padding-top: 70px;
       }
@@ -481,6 +531,10 @@
 
       .experience-card {
         grid-template-columns: 1fr;
+      }
+
+      .skill-card {
+        min-height: auto;
       }
     }
 
@@ -546,6 +600,27 @@
         <div class="actions">
           <a class="btn primary" href="#projects">Explore Projects</a>
           <a class="btn secondary" href="mailto:saimasanjidashila@gmail.com">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <h3 class="visual-title">Core Focus</h3>
+
+        <div class="visual-grid">
+          <div class="visual-item">
+            <strong>AI + Machine Learning</strong>
+            <span>LLMs, forecasting, computer vision, and predictive modeling</span>
+          </div>
+
+          <div class="visual-item">
+            <strong>Data Analytics</strong>
+            <span>Dashboards, insurance data, market insights, and visualization</span>
+          </div>
+
+          <div class="visual-item">
+            <strong>Software Development</strong>
+            <span>Full-stack apps, APIs, automation, and scalable tools</span>
+          </div>
         </div>
       </div>
     </section>
@@ -723,69 +798,68 @@
         <div class="card skill-card">
           <h3>Machine Learning & AI</h3>
           <div class="skills">
-            <span class="skill-chip"><span class="skill-icon">SK</span>Scikit-learn</span>
-            <span class="skill-chip"><span class="skill-icon">TF</span>TensorFlow</span>
-            <span class="skill-chip"><span class="skill-icon">PT</span>PyTorch</span>
-            <span class="skill-chip"><span class="skill-icon">AI</span>Fine Tuning</span>
-            <span class="skill-chip"><span class="skill-icon">AI</span>Large Language Models</span>
-            <span class="skill-chip"><span class="skill-icon">AI</span>Vision Language Models</span>
-            <span class="skill-chip"><span class="skill-icon">AI</span>CNN, LSTM, XGBoost, Hybrid Models</span>
-            <span class="skill-chip"><span class="skill-icon">AI</span>Machine Learning</span>
-            <span class="skill-chip"><span class="skill-icon">ML</span>Feature Selection</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E">Scikit-learn</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00">TensorFlow</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C">PyTorch</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/openai/412991">Large Language Models</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/python/3776AB">Vision Language Models</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/numpy/013243">CNN, LSTM, XGBoost</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/python/3776AB">Machine Learning</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E">Feature Selection</span>
           </div>
         </div>
 
         <div class="card skill-card">
           <h3>Software Development</h3>
           <div class="skills">
-            <span class="skill-chip"><span class="skill-icon">⚛</span>ReactJS</span>
-            <span class="skill-chip"><span class="skill-icon">JS</span>NodeJS</span>
-            <span class="skill-chip"><span class="skill-icon">.N</span>.NET</span>
-            <span class="skill-chip"><span class="skill-icon">Fl</span>Flask</span>
-            <span class="skill-chip"><span class="skill-icon">Dj</span>Django</span>
+            <span class="skill-chip"><i class="devicon-react-original colored"></i>ReactJS</span>
+            <span class="skill-chip"><i class="devicon-nodejs-plain colored"></i>NodeJS</span>
+            <span class="skill-chip"><i class="devicon-dotnetcore-plain colored"></i>.NET</span>
+            <span class="skill-chip"><i class="devicon-flask-original"></i>Flask</span>
+            <span class="skill-chip"><i class="devicon-django-plain colored"></i>Django</span>
           </div>
         </div>
 
         <div class="card skill-card">
           <h3>Data & Visualization</h3>
           <div class="skills">
-            <span class="skill-chip"><span class="skill-icon">🐼</span>Pandas</span>
-            <span class="skill-chip"><span class="skill-icon">NP</span>NumPy</span>
-            <span class="skill-chip"><span class="skill-icon">📊</span>Matplotlib</span>
-            <span class="skill-chip"><span class="skill-icon">Pl</span>Plotly</span>
-            <span class="skill-chip"><span class="skill-icon">BI</span>Power BI</span>
+            <span class="skill-chip"><i class="devicon-pandas-original colored"></i>Pandas</span>
+            <span class="skill-chip"><i class="devicon-numpy-original colored"></i>NumPy</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/matplotlib/11557C">Matplotlib</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/plotly/3F4F75">Plotly</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/powerbi/F2C811">Power BI</span>
           </div>
         </div>
 
         <div class="card skill-card">
           <h3>Database, Cloud & Tools</h3>
           <div class="skills">
-            <span class="skill-chip"><span class="skill-icon">SQL</span>SQL</span>
-            <span class="skill-chip"><span class="skill-icon">PG</span>PostgreSQL</span>
-            <span class="skill-chip"><span class="skill-icon">AWS</span>AWS</span>
-            <span class="skill-chip"><span class="skill-icon">SP</span>Apache Spark</span>
-            <span class="skill-chip"><span class="skill-icon">GH</span>GitHub</span>
+            <span class="skill-chip"><i class="devicon-mysql-original colored"></i>SQL</span>
+            <span class="skill-chip"><i class="devicon-postgresql-plain colored"></i>PostgreSQL</span>
+            <span class="skill-chip"><i class="devicon-amazonwebservices-original colored"></i>AWS</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/apachespark/E25A1C">Apache Spark</span>
+            <span class="skill-chip"><i class="devicon-github-original"></i>GitHub</span>
           </div>
         </div>
 
         <div class="card skill-card">
           <h3>Programming Languages</h3>
           <div class="skills">
-            <span class="skill-chip"><span class="skill-icon">Py</span>Python</span>
-            <span class="skill-chip"><span class="skill-icon">☕</span>Java</span>
-            <span class="skill-chip"><span class="skill-icon">H5</span>HTML</span>
-            <span class="skill-chip"><span class="skill-icon">CSS</span>CSS</span>
-            <span class="skill-chip"><span class="skill-icon">JS</span>JavaScript</span>
+            <span class="skill-chip"><i class="devicon-python-plain colored"></i>Python</span>
+            <span class="skill-chip"><i class="devicon-java-plain colored"></i>Java</span>
+            <span class="skill-chip"><i class="devicon-html5-plain colored"></i>HTML</span>
+            <span class="skill-chip"><i class="devicon-css3-plain colored"></i>CSS</span>
+            <span class="skill-chip"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
           </div>
         </div>
 
         <div class="card skill-card">
           <h3>Policy & Insurance Analytics</h3>
           <div class="skills">
-            <span class="skill-chip"><span class="skill-icon">IN</span>Insurance Data</span>
-            <span class="skill-chip"><span class="skill-icon">AI</span>AI Policy</span>
-            <span class="skill-chip"><span class="skill-icon">MR</span>Market Analysis</span>
-            <span class="skill-chip"><span class="skill-icon">NA</span>NAIC Collaboration</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/databricks/FF3621">Insurance Data</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/openai/412991">AI Policy</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/tableau/E97627">Market Analysis</span>
+            <span class="skill-chip"><img src="https://cdn.simpleicons.org/googleanalytics/E37400">NAIC Collaboration</span>
           </div>
         </div>
       </div>
@@ -835,7 +909,9 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("active");
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
       });
     }, { threshold: 0.12 });
 
