@@ -6,17 +6,24 @@
   <title>Saima Sanjida Shila</title>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
     :root {
-      --bg: #020617;
-      --card: rgba(15, 23, 42, 0.78);
-      --card2: rgba(30, 41, 59, 0.72);
-      --border: rgba(148, 163, 184, 0.28);
-      --text: #f8fafc;
-      --muted: #cbd5e1;
-      --blue: #38bdf8;
-      --cyan: #7dd3fc;
+      --blue: #0ea5e9;
+      --deep-blue: #075985;
+      --orange: #f97316;
+      --light-orange: #fed7aa;
+      --bg: #f8fbff;
+      --card: rgba(255, 255, 255, 0.78);
+      --text: #0f172a;
+      --muted: #475569;
+      --border: rgba(14, 165, 233, 0.22);
+      --shadow: 0 22px 60px rgba(2, 132, 199, 0.13);
     }
 
     body {
@@ -32,7 +39,7 @@
       inset: 0;
       z-index: -3;
       background:
-        linear-gradient(rgba(2,6,23,.78), rgba(2,6,23,.9)),
+        linear-gradient(rgba(248, 251, 255, 0.58), rgba(248, 251, 255, 0.82)),
         url("assets/background.png") center center / cover no-repeat;
     }
 
@@ -42,12 +49,15 @@
       inset: 0;
       z-index: -2;
       background:
-        radial-gradient(circle at 15% 18%, rgba(56,189,248,.22), transparent 30%),
-        radial-gradient(circle at 85% 12%, rgba(125,211,252,.13), transparent 32%),
-        linear-gradient(135deg, rgba(3,7,18,.55), rgba(15,23,42,.35));
+        radial-gradient(circle at 12% 18%, rgba(14, 165, 233, 0.20), transparent 34%),
+        radial-gradient(circle at 86% 18%, rgba(249, 115, 22, 0.18), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,0.72), rgba(239,246,255,0.62));
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     header {
       position: fixed;
@@ -62,24 +72,38 @@
       align-items: center;
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: rgba(2,6,23,.78);
+      background: rgba(255,255,255,0.78);
       backdrop-filter: blur(18px);
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      box-shadow: var(--shadow);
     }
 
-    .logo { font-weight: 900; font-size: 18px; white-space: nowrap; }
-    .logo span { color: var(--blue); }
+    .logo {
+      font-weight: 900;
+      font-size: 18px;
+      white-space: nowrap;
+      color: var(--deep-blue);
+    }
+
+    .logo span {
+      color: var(--orange);
+    }
 
     nav {
       display: flex;
       gap: 18px;
       font-size: 14px;
       color: var(--muted);
+      font-weight: 650;
     }
 
-    nav a:hover { color: white; }
+    nav a:hover {
+      color: var(--blue);
+    }
 
-    .social { display: flex; gap: 10px; }
+    .social {
+      display: flex;
+      gap: 10px;
+    }
 
     .social a {
       width: 38px;
@@ -87,14 +111,15 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: rgba(255,255,255,.08);
+      background: rgba(14,165,233,0.08);
       border: 1px solid var(--border);
+      color: var(--deep-blue);
       transition: .25s;
     }
 
     .social a:hover {
-      background: var(--blue);
-      color: #020617;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+      color: white;
       transform: translateY(-2px);
     }
 
@@ -107,40 +132,42 @@
     section {
       width: min(1120px, calc(100% - 32px));
       margin: auto;
-      padding: 82px 0;
+      padding: 78px 0;
     }
 
     .hero {
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 135px;
+      padding-top: 130px;
     }
 
-    .hero-inner { max-width: 880px; }
+    .hero-inner {
+      max-width: 860px;
+    }
 
     .eyebrow {
       display: inline-flex;
       padding: 9px 14px;
       margin-bottom: 22px;
       border-radius: 999px;
-      color: var(--cyan);
-      background: rgba(125,211,252,.12);
-      border: 1px solid rgba(125,211,252,.28);
+      color: var(--deep-blue);
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.26);
       font-size: 14px;
       font-weight: 800;
     }
 
     .hero h1 {
-      font-size: clamp(48px, 7vw, 82px);
-      line-height: 1.02;
-      letter-spacing: -2.4px;
+      font-size: clamp(42px, 5.6vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -1.8px;
       margin-bottom: 24px;
-      max-width: 980px;
+      max-width: 900px;
     }
 
     .gradient-text {
-      background: linear-gradient(90deg, #fff, #bae6fd, var(--blue));
+      background: linear-gradient(90deg, var(--deep-blue), var(--blue), var(--orange));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -151,9 +178,14 @@
       font-size: 18px;
       line-height: 1.75;
       margin-bottom: 30px;
+      font-weight: 500;
     }
 
-    .actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
     .btn {
       padding: 13px 20px;
@@ -164,35 +196,50 @@
     }
 
     .btn.primary {
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      color: #020617;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+      color: white;
       border: none;
     }
 
-    .btn.secondary { background: rgba(255,255,255,.08); }
+    .btn.secondary {
+      background: rgba(255,255,255,.76);
+      color: var(--deep-blue);
+    }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 35px rgba(56,189,248,.22);
+      box-shadow: 0 18px 35px rgba(249,115,22,.18);
     }
 
-    .section-head { margin-bottom: 28px; }
+    .section-head {
+      margin-bottom: 28px;
+    }
 
     .section-head h2 {
-      font-size: 40px;
-      letter-spacing: -1.3px;
-      margin-bottom: 10px;
+      font-size: 38px;
+      letter-spacing: -1.2px;
+      color: var(--deep-blue);
     }
 
     .section-head p {
       color: var(--muted);
       max-width: 760px;
       line-height: 1.65;
+      margin-top: 10px;
     }
 
-    .grid { display: grid; gap: 18px; }
-    .two { grid-template-columns: repeat(2, 1fr); }
-    .three { grid-template-columns: repeat(3, 1fr); }
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .three {
+      grid-template-columns: repeat(3, 1fr);
+    }
 
     .card {
       padding: 22px;
@@ -200,27 +247,38 @@
       background: var(--card);
       border: 1px solid var(--border);
       backdrop-filter: blur(18px);
-      box-shadow: 0 22px 55px rgba(0,0,0,.22);
+      box-shadow: var(--shadow);
       transition: .25s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      background: rgba(30,41,59,.82);
-      box-shadow: 0 24px 60px rgba(0,0,0,.28);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 24px 60px rgba(249,115,22,.14);
     }
 
-    .card h3 { font-size: 20px; margin-bottom: 8px; color: white; }
-    .card p, .card li { color: var(--muted); line-height: 1.6; font-size: 15px; }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
 
     .edu-card {
-      min-height: 142px;
+      min-height: 150px;
       display: flex;
       gap: 18px;
       align-items: center;
     }
 
-    .edu-card img, .work-logo {
+    .edu-card img,
+    .work-logo {
       width: 78px;
       height: 78px;
       object-fit: contain;
@@ -228,6 +286,7 @@
       border-radius: 18px;
       background: white;
       flex-shrink: 0;
+      border: 1px solid rgba(2,132,199,.14);
     }
 
     .edu-meta {
@@ -240,9 +299,9 @@
     .pill {
       padding: 7px 11px;
       border-radius: 999px;
-      background: rgba(125,211,252,.11);
-      border: 1px solid rgba(125,211,252,.25);
-      color: var(--cyan);
+      background: rgba(249,115,22,.10);
+      border: 1px solid rgba(249,115,22,.22);
+      color: #c2410c;
       font-size: 13px;
       font-weight: 800;
     }
@@ -262,14 +321,21 @@
       margin-bottom: 10px;
     }
 
-    .company, .date {
-      color: var(--cyan);
+    .company,
+    .date {
+      color: var(--blue);
       font-weight: 850;
       font-size: 14px;
     }
 
-    .experience-card ul { margin-top: 12px; padding-left: 18px; }
-    .experience-card li { margin-bottom: 7px; }
+    .experience-card ul {
+      margin-top: 12px;
+      padding-left: 18px;
+    }
+
+    .experience-card li {
+      margin-bottom: 7px;
+    }
 
     .project {
       height: 245px;
@@ -282,17 +348,31 @@
       width: fit-content;
       padding: 6px 11px;
       border-radius: 999px;
-      background: rgba(125,211,252,.14);
-      color: var(--cyan);
-      border: 1px solid rgba(125,211,252,.25);
+      background: rgba(14,165,233,.10);
+      color: var(--deep-blue);
+      border: 1px solid rgba(14,165,233,.22);
       font-size: 12px;
       font-weight: 850;
       margin-bottom: 14px;
     }
 
-    .project h3 { font-size: 18px; line-height: 1.25; margin-bottom: 9px; }
-    .project p { font-size: 14px; line-height: 1.55; }
-    .open { margin-top: 14px; color: var(--cyan); font-weight: 850; font-size: 13px; }
+    .project h3 {
+      font-size: 18px;
+      line-height: 1.25;
+      margin-bottom: 9px;
+    }
+
+    .project p {
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .open {
+      margin-top: 14px;
+      color: var(--orange);
+      font-weight: 850;
+      font-size: 13px;
+    }
 
     .skill-card {
       min-height: 190px;
@@ -313,9 +393,9 @@
       gap: 8px;
       padding: 9px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      border: 1px solid var(--border);
-      color: #dbeafe;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(14,165,233,.18);
+      color: var(--text);
       font-size: 13px;
       font-weight: 700;
     }
@@ -326,9 +406,9 @@
       display: grid;
       place-items: center;
       border-radius: 50%;
-      background: rgba(125,211,252,.14);
-      color: var(--cyan);
-      font-size: 12px;
+      background: linear-gradient(135deg, rgba(14,165,233,.16), rgba(249,115,22,.16));
+      color: var(--deep-blue);
+      font-size: 11px;
       font-weight: 900;
     }
 
@@ -340,7 +420,10 @@
       align-items: center;
     }
 
-    .award-year { color: var(--cyan); font-weight: 900; }
+    .award-year {
+      color: var(--orange);
+      font-weight: 900;
+    }
 
     footer {
       width: min(1120px, calc(100% - 32px));
@@ -372,17 +455,45 @@
         gap: 14px;
       }
 
-      nav { flex-wrap: wrap; justify-content: center; }
-      .hero { min-height: auto; padding-top: 70px; }
-      .two, .three { grid-template-columns: 1fr; }
-      .project { height: auto; min-height: 210px; }
-      .award { grid-template-columns: 1fr; }
-      .experience-card { grid-template-columns: 1fr; }
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 70px;
+      }
+
+      .two,
+      .three {
+        grid-template-columns: 1fr;
+      }
+
+      .project {
+        height: auto;
+        min-height: 210px;
+      }
+
+      .award {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 520px) {
-      .hero h1 { letter-spacing: -1.2px; }
-      .edu-card { flex-direction: column; align-items: flex-start; }
+      .hero h1 {
+        letter-spacing: -1px;
+        font-size: 42px;
+      }
+
+      .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
@@ -420,8 +531,12 @@
 
     <section id="about" class="hero reveal">
       <div class="hero-inner">
-        <div class="eyebrow">Software Engineer • Data Analyst • AI Policy</div>
-        <h1>Hi, I’m <span class="gradient-text">Saima Sanjida Shila</span></h1>
+        <div class="eyebrow">Software Developer • Data Analyst • AI Engineer</div>
+
+        <h1>
+          Hi, I’m <span class="gradient-text">Saima Sanjida Shila</span>
+        </h1>
+
         <p>
           A computer science graduate and data-focused professional working at the intersection of software engineering,
           machine learning, insurance analytics, and AI policy. I build data-driven tools, analyze complex datasets,
@@ -438,7 +553,6 @@
     <section id="education" class="reveal">
       <div class="section-head">
         <h2>Education</h2>
-        <p>Academic foundation in computer science, software engineering, machine learning, and data-driven systems.</p>
       </div>
 
       <div class="grid two">
@@ -471,7 +585,6 @@
     <section id="experience" class="reveal">
       <div class="section-head">
         <h2>Work Experience</h2>
-        <p>Professional experience across insurance data analytics, AI policy, research computing, software development, and data visualization.</p>
       </div>
 
       <div class="grid">
@@ -491,7 +604,7 @@
               <li>Participate as a member of the NAIC Big Data and Artificial Intelligence Working Group, contributing to insurance AI-related discussions with NAIC and other states.</li>
               <li>Collaborate with insurers and internal divisions to support a more profitable, sustainable, and policyholder-focused insurance market.</li>
               <li>Lead and coordinate cross-functional projects involving insurance data, AI, innovation, market research, and policy analysis.</li>
-              <li>Joined conferences and professional discussions on artificial intelligence, catastrophe modeling, and insurance innovation to strengthen technical knowledge and support data-driven regulatory decision-making.</li>
+              <li>Joined conferences and professional discussions on Artificial Intelligence, catastrophe modeling, and insurance innovation to strengthen technical knowledge and support data-driven regulatory decision-making.</li>
             </ul>
           </div>
         </div>
@@ -541,37 +654,61 @@
     <section id="projects" class="reveal">
       <div class="section-head">
         <h2>Featured Projects</h2>
-        <p>Compact project cards for machine learning, data visualization, web development, and analytics work.</p>
+        <p>Selected projects across machine learning, data visualization, full-stack development, and scalable analytics.</p>
       </div>
 
       <div class="grid three">
         <a class="card project" href="https://saimasanjidashila.github.io/EnVis/" target="_blank">
-          <div><div class="year">2025</div><h3>EnVis — Environmental Visualization</h3><p>Interactive platform for exploring climate and environmental datasets with live demos and documentation.</p></div>
+          <div>
+            <div class="year">2025</div>
+            <h3>EnVis — Environmental Visualization</h3>
+            <p>Interactive platform for exploring climate and environmental datasets with live demos and documentation.</p>
+          </div>
           <div class="open">View Project →</div>
         </a>
 
         <a class="card project" href="https://github.com/saimasanjidashila/Image-to-Text-Generation-A-Vision-Language-Model-for-Automated-Image-Captioning" target="_blank">
-          <div><div class="year">2025</div><h3>Image-to-Text Generation</h3><p>Vision-language image captioning system using BLIP and the Flickr30k dataset.</p></div>
+          <div>
+            <div class="year">2025</div>
+            <h3>Image-to-Text Generation</h3>
+            <p>Vision-language image captioning system using BLIP and the Flickr30k dataset.</p>
+          </div>
           <div class="open">View Repository →</div>
         </a>
 
         <a class="card project" href="https://github.com/saimasanjidashila/Time-Series-Forecast-of-Sea-Surface-Temperature-using-Deep-Learning" target="_blank">
-          <div><div class="year">2025</div><h3>SST Time-Series Forecasting</h3><p>Sea surface temperature forecasting using CNN, LSTM, and hybrid deep learning models.</p></div>
+          <div>
+            <div class="year">2025</div>
+            <h3>SST Time-Series Forecasting</h3>
+            <p>Sea surface temperature forecasting using CNN, LSTM, and hybrid deep learning models.</p>
+          </div>
           <div class="open">View Repository →</div>
         </a>
 
         <a class="card project" href="https://github.com/saimasanjidashila/QSum-using-Llama" target="_blank">
-          <div><div class="year">2024</div><h3>QSum using LLaMA</h3><p>Summarization system using LLaMA-2, transformers, and embeddings for concise answers.</p></div>
+          <div>
+            <div class="year">2024</div>
+            <h3>QSum using LLaMA</h3>
+            <p>Summarization system using LLaMA-2, transformers, and embeddings for concise answers.</p>
+          </div>
           <div class="open">View Repository →</div>
         </a>
 
         <a class="card project" href="https://github.com/saimasanjidashila/Airline-Database-Management-System" target="_blank">
-          <div><div class="year">2024</div><h3>Airline Database Management</h3><p>SQL and JavaScript system for airline bookings, passenger records, and flight updates.</p></div>
+          <div>
+            <div class="year">2024</div>
+            <h3>Airline Database Management</h3>
+            <p>SQL and JavaScript system for airline bookings, passenger records, and flight updates.</p>
+          </div>
           <div class="open">View Repository →</div>
         </a>
 
         <a class="card project" href="https://github.com/saimasanjidashila/E-commerce-Seller-Rating-System-using-Apache-Spark" target="_blank">
-          <div><div class="year">2024</div><h3>E-commerce Seller Rating</h3><p>Apache Spark system for customer transactions and seller reliability analysis.</p></div>
+          <div>
+            <div class="year">2024</div>
+            <h3>E-commerce Seller Rating</h3>
+            <p>Apache Spark system for customer transactions and seller reliability analysis.</p>
+          </div>
           <div class="open">View Repository →</div>
         </a>
       </div>
@@ -580,7 +717,6 @@
     <section id="skills" class="reveal">
       <div class="section-head">
         <h2>Technical Skills</h2>
-        <p>A practical mix of software development, machine learning, analytics, cloud, databases, and visualization tools.</p>
       </div>
 
       <div class="grid three">
@@ -654,15 +790,33 @@
     <section id="awards" class="reveal">
       <div class="section-head">
         <h2>Awards & Achievements</h2>
-        <p>Academic recognitions, professional membership, and research support received during undergraduate and graduate studies.</p>
       </div>
 
       <div class="grid">
-        <div class="card award"><div class="award-year">2025–Present</div><p>Member of the <strong>NAIC Big Data and Artificial Intelligence Working Group</strong>.</p></div>
-        <div class="card award"><div class="award-year">2025–2026</div><p>Member of <strong>The Honor Society of Phi Kappa Phi</strong> for Academic Excellence.</p></div>
-        <div class="card award"><div class="award-year">2024–2025</div><p>Master’s thesis <strong>funded by NSF grant</strong>.</p></div>
-        <div class="card award"><div class="award-year">2024–2025</div><p><strong>Graduate Assistantship Award</strong> by LSU.</p></div>
-        <div class="card award"><div class="award-year">2022</div><p>Dean’s List and Vice Chancellor’s Award for Academic Excellence at Brac University.</p></div>
+        <div class="card award">
+          <div class="award-year">2025–Present</div>
+          <p>Member of the <strong>NAIC Big Data and Artificial Intelligence Working Group</strong>.</p>
+        </div>
+
+        <div class="card award">
+          <div class="award-year">2025–2026</div>
+          <p>Member of <strong>The Honor Society of Phi Kappa Phi</strong> for Academic Excellence.</p>
+        </div>
+
+        <div class="card award">
+          <div class="award-year">2024–2025</div>
+          <p>Master’s thesis <strong>funded by NSF grant</strong>.</p>
+        </div>
+
+        <div class="card award">
+          <div class="award-year">2024–2025</div>
+          <p><strong>Graduate Assistantship Award</strong> by LSU.</p>
+        </div>
+
+        <div class="card award">
+          <div class="award-year">2022</div>
+          <p>Dean’s List and Vice Chancellor’s Award for Academic Excellence at Brac University.</p>
+        </div>
       </div>
     </section>
 
@@ -674,11 +828,13 @@
 
   <script>
     const reveals = document.querySelectorAll(".reveal");
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("active");
       });
     }, { threshold: 0.12 });
+
     reveals.forEach(el => observer.observe(el));
   </script>
 
