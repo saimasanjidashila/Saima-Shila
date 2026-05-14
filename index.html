@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saima Sanjida Shila</title>
+  <title>Saima Shila</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
@@ -20,7 +20,7 @@
       --deep-blue: #075985;
       --orange: #f97316;
       --bg: #f8fbff;
-      --card: rgba(255, 255, 255, 0.80);
+      --card: rgba(255, 255, 255, 0.84);
       --text: #0f172a;
       --muted: #475569;
       --border: rgba(14, 165, 233, 0.22);
@@ -73,7 +73,7 @@
       align-items: center;
       border: 1px solid var(--border);
       border-radius: 22px;
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.84);
       backdrop-filter: blur(18px);
       box-shadow: var(--shadow);
     }
@@ -217,7 +217,7 @@
     .hero-visual {
       padding: 24px;
       border-radius: 28px;
-      background: rgba(255,255,255,.68);
+      background: rgba(255,255,255,.72);
       border: 1px solid rgba(14,165,233,.22);
       box-shadow: var(--shadow);
       backdrop-filter: blur(18px);
@@ -296,7 +296,7 @@
 
     .card:hover {
       transform: translateY(-5px);
-      background: rgba(255,255,255,.92);
+      background: rgba(255,255,255,.94);
       box-shadow: 0 24px 60px rgba(249,115,22,.14);
     }
 
@@ -417,17 +417,34 @@
       font-size: 13px;
     }
 
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .skills-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 18px;
+    }
+
     .skill-card {
-      min-height: 280px;
+      min-height: 310px;
       display: flex;
       flex-direction: column;
+    }
+
+    .skill-card.small {
+      min-height: 230px;
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 12px;
+      margin-top: 14px;
       align-content: flex-start;
     }
 
@@ -437,7 +454,7 @@
       gap: 10px;
       padding: 10px 14px;
       border-radius: 14px;
-      background: rgba(255,255,255,.88);
+      background: rgba(255,255,255,.9);
       border: 1px solid rgba(14,165,233,.20);
       color: var(--text);
       font-size: 13px;
@@ -452,13 +469,23 @@
     }
 
     .skill-chip i {
-      font-size: 22px;
+      font-size: 23px;
     }
 
     .skill-chip img {
-      width: 22px;
-      height: 22px;
+      width: 23px;
+      height: 23px;
       object-fit: contain;
+    }
+
+    .sticker-icon {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(14,165,233,.16), rgba(249,115,22,.16));
+      font-size: 15px;
     }
 
     .award {
@@ -472,6 +499,63 @@
     .award-year {
       color: var(--orange);
       font-weight: 900;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .contact-intro {
+      background: linear-gradient(135deg, rgba(14,165,233,.13), rgba(249,115,22,.12));
+    }
+
+    .contact-intro h3 {
+      font-size: 28px;
+      color: var(--deep-blue);
+      margin-bottom: 10px;
+    }
+
+    .contact-info {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(14,165,233,.18);
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--orange));
+      color: white;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     footer {
@@ -509,15 +593,18 @@
         justify-content: center;
       }
 
-      .hero {
+      .hero,
+      .two,
+      .three,
+      .skills-grid,
+      .skills-grid-bottom,
+      .contact-card {
         grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 70px;
       }
 
-      .two,
-      .three {
-        grid-template-columns: 1fr;
+      .hero {
+        min-height: auto;
+        padding-top: 70px;
       }
 
       .project {
@@ -533,7 +620,8 @@
         grid-template-columns: 1fr;
       }
 
-      .skill-card {
+      .skill-card,
+      .skill-card.small {
         min-height: auto;
       }
     }
@@ -564,6 +652,7 @@
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#awards">Awards</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <div class="social">
@@ -588,7 +677,7 @@
         <div class="eyebrow">Software Developer • Data Analyst • AI Engineer</div>
 
         <h1>
-          Hi, I’m <span class="gradient-text">Saima Sanjida Shila</span>
+          Hi, I’m <span class="gradient-text">Saima Shila</span>
         </h1>
 
         <p>
@@ -794,7 +883,7 @@
         <h2>Technical Skills</h2>
       </div>
 
-      <div class="grid three">
+      <div class="skills-grid">
         <div class="card skill-card">
           <h3>Machine Learning & AI</h3>
           <div class="skills">
@@ -802,36 +891,32 @@
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00">TensorFlow</span>
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C">PyTorch</span>
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/openai/412991">Large Language Models</span>
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/python/3776AB">Vision Language Models</span>
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/numpy/013243">CNN, LSTM, XGBoost</span>
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/python/3776AB">Machine Learning</span>
+            <span class="skill-chip"><i class="devicon-python-plain colored"></i>Vision Language Models</span>
+            <span class="skill-chip"><span class="sticker-icon">🧠</span>CNN, LSTM, XGBoost</span>
+            <span class="skill-chip"><i class="devicon-python-plain colored"></i>Machine Learning</span>
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E">Feature Selection</span>
           </div>
         </div>
 
         <div class="card skill-card">
-          <h3>Software Development</h3>
+          <h3>Software Development, Data & Visualization</h3>
           <div class="skills">
             <span class="skill-chip"><i class="devicon-react-original colored"></i>ReactJS</span>
             <span class="skill-chip"><i class="devicon-nodejs-plain colored"></i>NodeJS</span>
             <span class="skill-chip"><i class="devicon-dotnetcore-plain colored"></i>.NET</span>
             <span class="skill-chip"><i class="devicon-flask-original"></i>Flask</span>
             <span class="skill-chip"><i class="devicon-django-plain colored"></i>Django</span>
-          </div>
-        </div>
-
-        <div class="card skill-card">
-          <h3>Data & Visualization</h3>
-          <div class="skills">
             <span class="skill-chip"><i class="devicon-pandas-original colored"></i>Pandas</span>
             <span class="skill-chip"><i class="devicon-numpy-original colored"></i>NumPy</span>
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/matplotlib/11557C">Matplotlib</span>
+            <span class="skill-chip"><span class="sticker-icon">📊</span>Matplotlib</span>
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/plotly/3F4F75">Plotly</span>
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/powerbi/F2C811">Power BI</span>
           </div>
         </div>
+      </div>
 
-        <div class="card skill-card">
+      <div class="skills-grid-bottom">
+        <div class="card skill-card small">
           <h3>Database, Cloud & Tools</h3>
           <div class="skills">
             <span class="skill-chip"><i class="devicon-mysql-original colored"></i>SQL</span>
@@ -842,7 +927,7 @@
           </div>
         </div>
 
-        <div class="card skill-card">
+        <div class="card skill-card small">
           <h3>Programming Languages</h3>
           <div class="skills">
             <span class="skill-chip"><i class="devicon-python-plain colored"></i>Python</span>
@@ -853,13 +938,13 @@
           </div>
         </div>
 
-        <div class="card skill-card">
+        <div class="card skill-card small">
           <h3>Policy & Insurance Analytics</h3>
           <div class="skills">
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/databricks/FF3621">Insurance Data</span>
+            <span class="skill-chip"><span class="sticker-icon">📈</span>Insurance Data</span>
             <span class="skill-chip"><img src="https://cdn.simpleicons.org/openai/412991">AI Policy</span>
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/tableau/E97627">Market Analysis</span>
-            <span class="skill-chip"><img src="https://cdn.simpleicons.org/googleanalytics/E37400">NAIC Collaboration</span>
+            <span class="skill-chip"><span class="sticker-icon">📊</span>Market Analysis</span>
+            <span class="skill-chip"><span class="sticker-icon">🏛️</span>NAIC Collaboration</span>
           </div>
         </div>
       </div>
@@ -898,10 +983,52 @@
       </div>
     </section>
 
+    <section id="contact" class="reveal">
+      <div class="section-head">
+        <h2>Contact Me</h2>
+      </div>
+
+      <div class="contact-card">
+        <div class="card contact-intro">
+          <h3>Let’s connect.</h3>
+          <p>
+            I am based in Baton Rouge, Louisiana and open to opportunities involving software development,
+            data analytics, machine learning, AI policy, and insurance technology.
+          </p>
+        </div>
+
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <strong>Location</strong>
+              <span>Baton Rouge, Louisiana</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:saimasanjidashila@gmail.com">saimasanjidashila@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">US</div>
+            <div>
+              <strong>Work Authorization</strong>
+              <span>Permanent Resident of the United States</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer>
-    © 2026 Saima Sanjida Shila. All rights reserved.
+    © 2026 Saima Shila. All rights reserved.
   </footer>
 
   <script>
